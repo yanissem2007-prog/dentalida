@@ -6,13 +6,15 @@ import FloatingCTA from "@/components/FloatingCTA";
 import Hero from "@/components/Hero";
 import Marquee from "@/components/Marquee";
 import About from "@/components/About";
+import Team from "@/components/Team";
 import Services from "@/components/Services";
 import BeforeAfter from "@/components/BeforeAfter";
 import Testimonials from "@/components/Testimonials";
 import Technology from "@/components/Technology";
+import FAQ from "@/components/FAQ";
 import Location from "@/components/Location";
 import Social from "@/components/Social";
-import CTA from "@/components/CTA";
+import Appointment from "@/components/Appointment";
 import Footer from "@/components/Footer";
 import RevealObserver from "@/components/RevealObserver";
 import ScrollProgress from "@/components/ScrollProgress";
@@ -33,14 +35,15 @@ export default function Page() {
         <Hero />
         <Marquee />
         <About />
-        <div className="sep" />
+        <Team />
         <Services />
         <BeforeAfter />
         <Testimonials />
         <Technology />
+        <FAQ />
         <Location />
         <Social />
-        <CTA />
+        <Appointment />
       </main>
       <Footer />
     </>

@@ -1,6 +1,7 @@
 export default function CTA() {
   return (
     <section id="rdv" className="relative py-24 md:py-32 lg:py-40 overflow-hidden bg-ink text-pearl">
+      <div className="absolute top-0 inset-x-0 h-28 bg-gradient-to-b from-silver/10 to-transparent pointer-events-none z-10" />
       <div className="absolute inset-0">
         <div className="absolute inset-0 opacity-70" style={{ background: "radial-gradient(ellipse at center, rgba(124,58,237,.3), transparent 60%)" }} />
         <div className="absolute top-0 left-0 w-[600px] h-[600px] rounded-full bg-royal/30 blur-[150px]" />

@@ -1,7 +1,7 @@
 export default function Social() {
   return (
     <section className="py-24 bg-gradient-to-b from-pearl to-silver overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+      <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12">
         <div className="grid md:grid-cols-2 gap-6 reveal-stagger">
           <a href="https://www.instagram.com/dentalida/" target="_blank" rel="noreferrer" className="group relative overflow-hidden rounded-3xl p-10 lg:p-14 bg-gradient-to-br from-violet-deep via-violet-soft to-gold transition-transform hover:scale-[1.02] duration-700">
             <div className="absolute inset-0 opacity-30" style={{ background: "radial-gradient(circle at 80% 20%, white, transparent 50%)" }} />

@@ -7,8 +7,8 @@ const services = [
   { num: "03", title: "Orthodontie", tag: "Alignement", desc: "Alignement dentaire pour enfants et adultes — bagues classiques ou invisibles.", grad: "from-azure via-violet-soft to-violet-deep", glow: "rgba(167,139,250,.6)", img: "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=800&q=80" },
   { num: "04", title: "LASER Dentaire", tag: "Technologie", desc: "Technologie laser pour des soins précis, indolores et à guérison rapide.", grad: "from-violet-deep via-violet-soft to-gold", glow: "rgba(212,175,122,.55)", img: "https://images.unsplash.com/photo-1571772996211-2f02c9727629?auto=format&fit=crop&w=800&q=80" },
   { num: "05", title: "Parodontologie", tag: "Soins gencives", desc: "Traitement des gencives, prévention et soin des maladies parodontales.", glow: "rgba(212,175,122,.5)", grad: "from-gold via-violet-soft to-royal", img: "https://images.unsplash.com/photo-1588776814546-daab30f310ce?auto=format&fit=crop&w=800&q=80" },
-  { num: "06", title: "Sourire Gingival", tag: "Correction", desc: "Correction esthétique pour harmoniser dents et gencives.", grad: "from-royal via-violet-deep to-deep", glow: "rgba(30,75,168,.6)", img: "https://images.unsplash.com/photo-1581585504432-aebfa15f99c3?auto=format&fit=crop&w=800&q=80" },
-  { num: "07", title: "Esthétique Dentaire", tag: "Beauté du sourire", desc: "Blanchiment, facettes, composites — révélez la beauté naturelle.", grad: "from-violet-soft via-gold to-royal", glow: "rgba(167,139,250,.55)", img: "https://images.unsplash.com/photo-1606811951341-65f0c52b1ee0?auto=format&fit=crop&w=800&q=80" },
+  { num: "06", title: "Sourire Gingival", tag: "Correction", desc: "Correction esthétique pour harmoniser dents et gencives.", grad: "from-royal via-violet-deep to-deep", glow: "rgba(30,75,168,.6)", img: "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=800&q=85" },
+  { num: "07", title: "Esthétique Dentaire", tag: "Beauté du sourire", desc: "Blanchiment, facettes, composites — révélez la beauté naturelle.", grad: "from-violet-soft via-gold to-royal", glow: "rgba(167,139,250,.55)", img: "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=800&q=85" },
 ];
 
 export default function Services() {
@@ -49,21 +49,19 @@ export default function Services() {
 
   return (
     <section id="services" className="relative bg-ink text-pearl">
-      <div className="max-w-[1400px] mx-auto px-5 sm:px-6 lg:px-10 pt-24 lg:pt-32 pb-10 lg:pb-12 relative z-10">
+      <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12 pt-24 lg:pt-32 pb-10 lg:pb-12 relative z-10">
         <div className="grid lg:grid-cols-12 gap-6 lg:gap-8 items-end reveal">
-          <div className="lg:col-span-2 text-[10px] font-mono uppercase tracking-[0.4em] text-pearl/40">
-            (02) — Soins
-          </div>
-          <div className="lg:col-span-6">
-            <div className="eyebrow mb-6" style={{ color: "#a78bfa" }}><span>L&apos;Expérience Dentalida</span></div>
-            <h2 className="font-serif font-light text-[42px] sm:text-6xl lg:text-8xl leading-[0.95] tracking-[-0.03em]">
-              Sept spécialités<br />
-              <span className="italic" style={{ background: "linear-gradient(135deg,#a78bfa,#d4af7a)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>une signature unique.</span>
+          <div className="lg:col-span-7">
+            <div className="eyebrow mb-7" style={{ color: "#a78bfa" }}><span>L&apos;Expérience Dentalida</span></div>
+            <h2 className="font-serif font-light text-[40px] sm:text-6xl lg:text-7xl leading-[1.04] tracking-[-0.03em]">
+              <span className="line"><span>Sept spécialités,</span></span>
+              <span className="line"><span className="italic" style={{ background: "linear-gradient(120deg,#a78bfa,#c9a96a)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>une seule signature.</span></span>
             </h2>
           </div>
-          <div className="lg:col-span-4">
+          <div className="lg:col-span-4 lg:col-start-9">
+            <div className="gold-rule mb-5" />
             <p className="text-pearl/60 text-base lg:text-lg font-light leading-relaxed">
-              Une approche complète du sourire, conçue comme une collection de soins d&apos;exception. Chaque procédure est pensée pour révéler le meilleur de vous.
+              Une approche complète du sourire, conçue comme une collection de soins d&apos;exception — pensée pour révéler le meilleur de vous.
             </p>
           </div>
         </div>
@@ -108,11 +106,10 @@ export default function Services() {
                     </div>
 
                     <div className="col-span-7 relative">
-                      <div className={`relative aspect-[4/5] max-w-md mx-auto rounded-[40px] overflow-hidden bg-gradient-to-br ${s.grad}`}>
-                        <img src={s.img} alt={s.title} className="absolute inset-0 w-full h-full object-cover" />
-                        <div className={`absolute inset-0 bg-gradient-to-tr ${s.grad} opacity-50 mix-blend-multiply`} />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                        <div className="absolute top-6 right-6 font-serif text-[100px] leading-none text-white/25">{s.num}</div>
+                      <div className="relative aspect-[4/5] max-w-md mx-auto rounded-[36px] overflow-hidden ring-1 ring-white/10 shadow-[var(--shadow-lux)]">
+                        <img src={s.img} alt={s.title} loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/10 to-transparent" />
+                        <div className="absolute top-6 right-7 font-serif text-[100px] leading-none text-white/20">{s.num}</div>
                         <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
                           <div className="text-white">
                             <div className="text-[10px] uppercase tracking-[0.3em] opacity-80 mb-1">Soin signature</div>
@@ -146,12 +143,11 @@ export default function Services() {
           backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }} />
-        <div className="relative max-w-[1400px] mx-auto px-5 sm:px-6 pb-24 grid sm:grid-cols-2 gap-5">
+        <div className="relative max-w-[1440px] mx-auto px-5 sm:px-8 pb-24 grid sm:grid-cols-2 gap-4 sm:gap-5">
           {services.map((s, i) => (
-            <a key={i} href="#rdv" className={`group relative aspect-[4/5] rounded-[28px] overflow-hidden bg-gradient-to-br ${s.grad}`}>
-              <img src={s.img} alt={s.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-              <div className={`absolute inset-0 bg-gradient-to-tr ${s.grad} opacity-50 mix-blend-multiply`} />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+            <a key={i} href="#rdv" className="group relative aspect-[4/5] rounded-[26px] overflow-hidden ring-1 ring-white/10">
+              <img src={s.img} alt={s.title} loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink/88 via-ink/15 to-transparent" />
 
               <div className="absolute top-5 left-5 right-5 flex justify-between items-start text-white">
                 <span className="text-[10px] uppercase tracking-[0.3em] opacity-80 font-mono">{s.tag}</span>

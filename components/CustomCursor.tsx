@@ -6,6 +6,7 @@ export default function CustomCursor() {
     const cursor = document.getElementById("cursor");
     const dot = document.getElementById("cursor-dot");
     if (!cursor || !dot) return;
+    document.body.classList.add("custom-cursor");
     let mx = 0, my = 0, cx = 0, cy = 0;
     const onMove = (e: MouseEvent) => {
       mx = e.clientX;
@@ -25,12 +26,13 @@ export default function CustomCursor() {
     loop();
     const enter = () => document.body.classList.add("cursor-hover");
     const leave = () => document.body.classList.remove("cursor-hover");
-    const hoverables = document.querySelectorAll("a, button, .svc, .ba-wrap");
+    const hoverables = document.querySelectorAll("a, button, [data-magnetic], .ba-wrap");
     hoverables.forEach((el) => {
       el.addEventListener("mouseenter", enter);
       el.addEventListener("mouseleave", leave);
     });
     return () => {
+      document.body.classList.remove("custom-cursor");
       window.removeEventListener("mousemove", onMove);
       cancelAnimationFrame(raf);
       hoverables.forEach((el) => {

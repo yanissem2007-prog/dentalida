@@ -3,17 +3,14 @@ import Star from "./Star";
 
 const reviews = [
   { name: "Hadoula Dz", initial: "H", grad: "from-royal to-violet-deep", text: "Vous m'avez fait un excellent travail, très satisfaite. Un dentiste compétent qui travaille avec le cœur, elle a changé ma vie et m'a rendu le sourire.", proc: "Hollywood Smile" },
-  { name: "Asmaa Messedaa", initial: "A", grad: "from-violet-soft to-gold", text: "J'ai pu enfin surmonter ma phobie des dentistes grâce à Dentalida. Très compétente, minutieuse, et surtout DOUCE !", proc: "Soins esthétiques" },
+  { name: "Asmaa Messedaa", initial: "A", grad: "from-violet-soft to-gold", text: "J'ai pu enfin surmonter ma phobie des dentistes grâce à Dentalida. Très compétente, minutieuse, et surtout douce.", proc: "Soins esthétiques" },
   { name: "Mohamed Chenane", initial: "M", grad: "from-deep to-azure", text: "Excellente équipe. Très satisfait de mon Hollywood Smile. Sans exagérer, ça ressemble à ceux des stars.", proc: "Hollywood Smile" },
   { name: "Sehad Dalia", initial: "S", grad: "from-gold to-royal", text: "Je recommande fortement Dentalida, qui fait un travail exceptionnel et très professionnel.", proc: "Consultation" },
   { name: "Lydia Abbas", initial: "L", grad: "from-azure to-violet-soft", text: "Un travail parfait, des dentistes très respectueux, avec un prix raisonnable. Je vous conseille d'y aller.", proc: "Réhabilitation" },
-  { name: "Yasmine K.", initial: "Y", grad: "from-violet-deep to-gold", text: "Une expérience apaisante du début à la fin. Le résultat dépasse mes attentes.", proc: "Orthodontie" },
-  { name: "Karim B.", initial: "K", grad: "from-royal to-gold", text: "Professionnalisme et chaleur humaine. Je n'imaginais pas un cabinet aussi accueillant.", proc: "Implant" },
-  { name: "Sarah M.", initial: "S", grad: "from-azure to-violet-deep", text: "Mon sourire est ma plus belle accessoire désormais. Merci Dentalida.", proc: "Facettes" },
 ];
 
 const Card = ({ r, sm = false }: { r: typeof reviews[0]; sm?: boolean }) => (
-  <div className={`flex-shrink-0 ${sm ? "w-[340px]" : "w-[420px]"} glass rounded-3xl p-7 relative overflow-hidden group transition-all duration-500 hover:scale-[1.02]`}>
+  <div className={`flex-shrink-0 w-[300px] sm:w-[360px] ${sm ? "lg:w-[340px]" : "lg:w-[420px]"} glass rounded-3xl p-6 sm:p-7 relative overflow-hidden group transition-all duration-500 hover:scale-[1.02]`}>
     <div className={`absolute -top-20 -right-20 w-48 h-48 rounded-full bg-gradient-to-br ${r.grad} opacity-0 group-hover:opacity-20 blur-3xl transition-opacity duration-700`} />
     <div className="relative">
       <div className="flex items-start justify-between mb-5">
@@ -47,24 +44,23 @@ export default function Testimonials() {
       <div className="absolute -top-32 left-1/4 w-[500px] h-[500px] rounded-full bg-violet-soft/20 blur-[140px]" />
       <div className="absolute -bottom-32 right-1/4 w-[500px] h-[500px] rounded-full bg-azure/15 blur-[140px]" />
 
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-10 relative mb-20">
+      <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12 relative mb-20">
         <div className="grid lg:grid-cols-12 gap-8 items-end reveal">
-          <div className="lg:col-span-2 text-[10px] font-mono uppercase tracking-[0.4em] text-ink/40">
-            (04) — Voix
-          </div>
-          <div className="lg:col-span-7">
-            <div className="eyebrow mb-6"><span>Témoignages · Vérifiés Google</span></div>
-            <h2 className="font-serif font-light text-5xl lg:text-8xl leading-[0.95] tracking-[-0.03em]">
-              Des sourires<br />
-              <span className="italic grad-text">qui parlent.</span>
+          <div className="lg:col-span-8">
+            <div className="eyebrow mb-7"><span>Témoignages · Vérifiés Google</span></div>
+            <h2 className="font-serif font-light text-[40px] sm:text-6xl lg:text-7xl leading-[1.04] tracking-[-0.03em]">
+              <span className="line"><span>Des sourires</span></span>
+              <span className="line"><span className="italic grad-text">qui parlent pour nous.</span></span>
             </h2>
           </div>
-          <div className="lg:col-span-3 flex flex-col items-start lg:items-end gap-4">
-            <div className="flex gap-1">
-              {Array.from({ length: 5 }).map((_, i) => <Star key={i} size={20} />)}
+          <div className="lg:col-span-3 lg:col-start-10 flex flex-row lg:flex-col items-center lg:items-end gap-4 lg:gap-3">
+            <div className="font-serif text-6xl lg:text-7xl grad-text leading-none">5.0</div>
+            <div className="lg:text-right">
+              <div className="flex gap-1 mb-2 lg:justify-end">
+                {Array.from({ length: 5 }).map((_, i) => <Star key={i} size={16} />)}
+              </div>
+              <div className="idx text-ink/45">+1000 patients</div>
             </div>
-            <div className="font-serif text-5xl lg:text-6xl grad-text">5.0</div>
-            <div className="text-[10px] uppercase tracking-[0.4em] text-ink/50">+1000 patients · Google</div>
           </div>
         </div>
       </div>
@@ -80,7 +76,7 @@ export default function Testimonials() {
       </div>
 
       {/* CTA strip */}
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-10 mt-20 reveal">
+      <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12 mt-20 reveal">
         <div className="relative overflow-hidden rounded-[32px] bg-ink text-pearl p-10 lg:p-14 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
           <div className="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-violet-deep/40 blur-[120px]" />
           <div className="absolute -bottom-32 -right-32 w-96 h-96 rounded-full bg-royal/30 blur-[120px]" />

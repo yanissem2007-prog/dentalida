@@ -49,7 +49,7 @@ export default function Loader() {
           </div>
         </div>
 
-        <div className="font-serif text-5xl font-light text-white tracking-[0.4em]">DENTALIDA</div>
+        <div className="font-serif text-3xl sm:text-5xl font-light text-white tracking-[0.25em] sm:tracking-[0.4em] pl-[0.25em]">DENTALIDA</div>
 
         <div className="w-72 max-w-full">
           <div className="h-px bg-white/15 relative overflow-hidden">

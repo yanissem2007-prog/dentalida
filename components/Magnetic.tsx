@@ -3,25 +3,45 @@ import { useEffect } from "react";
 
 export default function Magnetic() {
   useEffect(() => {
-    const els = Array.from(document.querySelectorAll<HTMLElement>(".btn-primary, .btn-ghost, .float-cta"));
-    const handlers: Array<() => void> = [];
-    els.forEach((btn) => {
+    if (window.matchMedia("(hover: none)").matches) return;
+    const els = Array.from(document.querySelectorAll<HTMLElement>("[data-magnetic], .float-cta"));
+    const cleanups: Array<() => void> = [];
+
+    els.forEach((el) => {
+      let rafId = 0;
+      let tx = 0, ty = 0, cx = 0, cy = 0;
+      const strength = el.classList.contains("float-cta") ? 0.3 : 0.22;
+
       const onMove = (e: MouseEvent) => {
-        const rect = btn.getBoundingClientRect();
-        const x = e.clientX - rect.left - rect.width / 2;
-        const y = e.clientY - rect.top - rect.height / 2;
-        btn.style.transform = `translate(${x * 0.18}px, ${y * 0.18}px)`;
+        const r = el.getBoundingClientRect();
+        tx = (e.clientX - r.left - r.width / 2) * strength;
+        ty = (e.clientY - r.top - r.height / 2) * strength;
+        if (!rafId) loop();
       };
-      const onLeave = () => (btn.style.transform = "translate(0,0)");
-      btn.style.transition = "transform .5s cubic-bezier(.22,1,.36,1)";
-      btn.addEventListener("mousemove", onMove);
-      btn.addEventListener("mouseleave", onLeave);
-      handlers.push(() => {
-        btn.removeEventListener("mousemove", onMove);
-        btn.removeEventListener("mouseleave", onLeave);
+      const loop = () => {
+        cx += (tx - cx) * 0.18;
+        cy += (ty - cy) * 0.18;
+        el.style.transform = `translate(${cx.toFixed(2)}px, ${cy.toFixed(2)}px)`;
+        if (Math.abs(tx - cx) > 0.1 || Math.abs(ty - cy) > 0.1) {
+          rafId = requestAnimationFrame(loop);
+        } else {
+          rafId = 0;
+        }
+      };
+      const onLeave = () => {
+        tx = 0; ty = 0;
+        if (!rafId) loop();
+      };
+      el.addEventListener("mousemove", onMove);
+      el.addEventListener("mouseleave", onLeave);
+      cleanups.push(() => {
+        el.removeEventListener("mousemove", onMove);
+        el.removeEventListener("mouseleave", onLeave);
+        cancelAnimationFrame(rafId);
       });
     });
-    return () => handlers.forEach((fn) => fn());
+
+    return () => cleanups.forEach((fn) => fn());
   }, []);
   return null;
 }

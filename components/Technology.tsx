@@ -13,7 +13,7 @@ export default function Technology() {
         <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full bg-azure/30 blur-[120px]" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-10 relative grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12 relative grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         <div className="lg:col-span-6 reveal">
           <div className="eyebrow mb-6" style={{ color: "#a78bfa" }}><span>Technologie · Précision</span></div>
           <h2 className="font-serif font-light text-[40px] sm:text-5xl lg:text-7xl leading-[1.05] mb-8">
@@ -51,6 +51,8 @@ export default function Technology() {
                 <img
                   src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=600&q=80"
                   alt="Technologie Dentalida"
+                  loading="lazy"
+                  decoding="async"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-tr from-royal/50 via-transparent to-violet-soft/40 mix-blend-overlay" />
@@ -65,8 +67,8 @@ export default function Technology() {
               <div className="orbit-dot" style={{ top: "50%", right: 0, background: "#7c3aed", boxShadow: "0 0 30px #7c3aed" }} />
             </div>
 
-            <div className="absolute top-4 right-8 text-xs text-pearl/60 font-mono">PRECISION · 99.8%</div>
-            <div className="absolute bottom-8 left-4 text-xs text-pearl/60 font-mono">STERILE · ISO</div>
+            <div className="absolute top-4 right-8 idx text-pearl/55">Précision</div>
+            <div className="absolute bottom-8 left-4 idx text-pearl/55">Hygiène · Confort</div>
           </div>
         </div>
       </div>

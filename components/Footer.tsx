@@ -3,7 +3,7 @@ import Logo from "./Logo";
 export default function Footer() {
   return (
     <footer className="bg-[#06101f] text-pearl/80 pt-20 pb-10">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+      <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12">
         <div className="grid lg:grid-cols-12 gap-12 mb-16">
           <div className="lg:col-span-5">
             <a href="#" className="flex items-center gap-3 mb-6">
@@ -31,6 +31,7 @@ export default function Footer() {
               <li><a href="#services">Nos soins</a></li>
               <li><a href="#transformation">Transformations</a></li>
               <li><a href="#temoignages">Témoignages</a></li>
+              <li><a href="#faq">FAQ</a></li>
               <li><a href="#contact">Contact</a></li>
             </ul>
           </div>

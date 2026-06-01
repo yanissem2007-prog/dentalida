@@ -1,7 +1,8 @@
 export default function Location() {
   return (
     <section id="contact" className="relative py-24 md:py-32 lg:py-40 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-10">
+      <div className="absolute top-0 inset-x-0 h-28 bg-gradient-to-b from-ink/[0.06] to-transparent pointer-events-none" />
+      <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12">
         <div className="text-center max-w-3xl mx-auto mb-16 reveal">
           <div className="eyebrow justify-center mb-6 inline-flex"><span>Localisation · Alger</span></div>
           <h2 className="font-serif font-light text-[40px] sm:text-5xl lg:text-7xl leading-[1.05] tracking-[-0.02em] mb-6">
@@ -14,12 +15,12 @@ export default function Location() {
           <div className="lg:col-span-3 reveal">
             <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-3 sm:mb-4">
               <div className="relative aspect-square rounded-2xl overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=500&q=80" alt="Cabinet" className="absolute inset-0 w-full h-full object-cover" />
+                <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=500&q=80" alt="Cabinet" loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-deep/60 to-transparent" />
                 <div className="absolute bottom-2 left-2 text-white text-[10px] uppercase tracking-[0.2em] font-mono">Cabinet</div>
               </div>
               <div className="relative aspect-square rounded-2xl overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=500&q=80" alt="Équipement" className="absolute inset-0 w-full h-full object-cover" />
+                <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=500&q=80" alt="Équipement" loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-violet-deep/60 to-transparent" />
                 <div className="absolute bottom-2 left-2 text-white text-[10px] uppercase tracking-[0.2em] font-mono">Tech</div>
               </div>
